@@ -11,20 +11,18 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee {
+public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long employeeId;
+    private Long accountId;
 
-    private String name;
+    private Long numberAccount;
 
-    private String position;
+    private String change;
 
-    private String phone;
-
-    private int dni;
+    private boolean enabled;
 
     @ManyToOne
-    @JoinColumn(name = "branch_id", foreignKey = @ForeignKey(name = "fk_employed_branch"))
-    private Branch branch;
+    @JoinColumn(name = "client_id", foreignKey = @ForeignKey(name = "fk_account_client"))
+    private Client client;
 }

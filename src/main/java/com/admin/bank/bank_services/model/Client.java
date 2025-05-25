@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -27,4 +30,7 @@ public class Client {
     @ManyToOne
     @JoinColumn(name = "branch_id", foreignKey = @ForeignKey(name = "fk_client_branch"))
     private Branch branch;
+
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Account> accounts = new ArrayList<>();
 }
