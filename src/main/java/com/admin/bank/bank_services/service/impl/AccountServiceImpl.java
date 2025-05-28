@@ -4,9 +4,11 @@ import com.admin.bank.bank_services.model.Account;
 import com.admin.bank.bank_services.repository.AccountRepository;
 import com.admin.bank.bank_services.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AccountServiceImpl implements AccountService {
     @Autowired
     AccountRepository accountRepository;

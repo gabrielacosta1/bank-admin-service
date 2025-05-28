@@ -4,9 +4,11 @@ import com.admin.bank.bank_services.model.Client;
 import com.admin.bank.bank_services.repository.ClientRepository;
 import com.admin.bank.bank_services.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ClientServiceImpl implements ClientService {
     @Autowired
     ClientRepository clientRepository;
